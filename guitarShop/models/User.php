@@ -6,8 +6,6 @@
  *
  */
 class Product {
-    
-	id, firstname, lastname, email, phone, address, city, zip, country, state, password
 	
     private $id;
     private $firstname;
@@ -20,6 +18,7 @@ class Product {
 	private $country;
 	private $state;
 	private $password;
+	private $admin;
  
     /**
      * Builds an object with instance variables set. Only the instance variables
