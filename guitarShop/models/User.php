@@ -5,7 +5,7 @@
  *
  *
  */
-class Product {
+class User {
 	
     private $id;
     private $firstname;
