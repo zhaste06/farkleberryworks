@@ -17,6 +17,8 @@ include_once(APP_NON_WEB_BASE_DIR .'controllers/CartController.php');
 include_once(APP_NON_WEB_BASE_DIR .'controllers/AdminController.php');
 include_once(APP_NON_WEB_BASE_DIR .'models/Category.php');
 include_once(APP_NON_WEB_BASE_DIR .'models/Product.php');
+include_once(APP_NON_WEB_BASE_DIR .'models/User.php');
+include_once(APP_NON_WEB_BASE_DIR .'db/UserDAM.php');
 include_once(APP_NON_WEB_BASE_DIR .'db/CategoryDAM.php');
 //include_once(APP_NON_WEB_BASE_DIR .'db/CategoryDAMAchtung.php');
 include_once(APP_NON_WEB_BASE_DIR .'db/ProductDAM.php');
