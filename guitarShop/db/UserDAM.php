@@ -49,6 +49,12 @@ class UserDAM extends DAM {
             else if ($key == 'state'){
                 $varArray['state'] = $value;
             }
+            else if ($key == 'userPrivilege'){
+                $varArray['userPrivilege'] = $value;
+            }
+            else if ($key == 'password'){
+                $varArray['password'] = $value;
+            }
         }return $varArray;
     }
 }
