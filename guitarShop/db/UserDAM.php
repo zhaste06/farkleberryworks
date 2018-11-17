@@ -1,10 +1,9 @@
-
 <?php
 
 /**
  * Product model data access and manipulation (DAM) class.
  *
- * @author Lance and jam
+ * @author Group We're Ready and jam
  */
 class ProductDAM extends DAM {
 
@@ -33,50 +32,6 @@ class ProductDAM extends DAM {
             return new Product($this->mapColsToVars($userDB));
         }
     }
-     
-
-    /**
-     * Read all the Product objects in the database.
-     * @return \Product an array of Product objects.
-     
-    public function readProducts() {
-        $query = 'SELECT * FROM products
-              ORDER BY productID';
-        $statement = $this->db->prepare($query);
-        $statement->execute();
-        $productsDB = $statement->fetchAll();
-        $statement->closeCursor();
-
-        // Build an array of Product objects
-        $products = array();
-        foreach ($productsDB as $key => $value) {
-            $products [$key] = new Product($this->mapColsToVars($productsDB[$key]));
-        }
-        return $products;
-    }*/
-
-    /**
-     * Read all the Product objects in the database with the specified
-     * categoryID.
-     * @param type $categoryID the ID of the product category to be read.
-     * @return \Product an array of Product objects.
-     
-    public function readProductsByCategoryId($categoryID) {
-        $query = 'SELECT * FROM products
-              WHERE categoryID = \''. $categoryID . '\'
-              ORDER BY productID';
-        $statement = $this->db->prepare($query);
-        $statement->execute();
-        $productsDB = $statement->fetchAll();
-        $statement->closeCursor();
-
-        // Build an array of Product objects
-        $products = array();
-        foreach ($productsDB as $key => $value) {
-            $products [$key] = new Product($this->mapColsToVars($productsDB[$key]));
-        }
-        return $products;
-    }*/
 
     /**
      * Write the specified product to the database. If the product is not
@@ -137,7 +92,7 @@ class ProductDAM extends DAM {
         $statement->execute();
         $userDB = $statement->fetch();
         $statement->closeCursor();
-        if ($user == null) {
+        if ($userDB == null) {
             //nothing
         } else {
 
@@ -166,26 +121,6 @@ class ProductDAM extends DAM {
             $statement->closeCursor();
         }
     }
-    /**
-     * Delete the specified Product object from the database.
-     * 
-     * @param type $product the Product object to be deleted.
-     
-    public function deleteProduct($product) {
-        $this->deleteProductById($product->id);
-    }
-
-    /**
-     * Delete the Product object from the database with the specified ID.
-     * 
-     * @param type $productID the ID of the Product to be deleted.
-     
-    public function deleteProductById($productID) {
-        $query = 'DELETE FROM products WHERE productID = \'' . $productID . '\'';
-        $statement = $this->db->prepare($query);
-        $statement->execute();
-        $statement->closeCursor();
-    }*/
 
     // Translate database columnames to object instance variable names
     private function mapColsToVars($colArray) {
