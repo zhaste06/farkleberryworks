@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Product model data access and manipulation (DAM) class.
+ * User model data access and manipulation (DAM) class.
  *
  * @author Group We're Ready and jam
  */
-class ProductDAM extends DAM {
+class UserDAM extends DAM {
 
     // Database connection is inherited from the parent.
     function __construct() {
@@ -29,19 +29,19 @@ class ProductDAM extends DAM {
         if ($userDB == null) {
             return null;
         } else {
-            return new Product($this->mapColsToVars($userDB));
+            return new User($this->mapColsToVars($userDB));
         }
     }
 
     /**
      * Write the specified product to the database. If the product is not
-     * in the database, the object is added. If the product is already in the
+     * in the database, the object is added. If the user is already in the
      * database, the object is updated.
      * @param type $product the Product object to be written.
      */
     public function createUser($user) {
 
-        // Check to see if the product is already in the database.
+        // Check to see if the user is already in the database.
         $query = 'SELECT email FROM users
               WHERE email = :email';
         $statement = $this->db->prepare($query);
