@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @author Lance Lentz and jam
+ * @author Group We're Ready and jam
  *
  *
  */
@@ -17,7 +17,7 @@ class User {
 	private $zip;
 	private $country;
 	private $state;
-	private $password;
+	private $password; //This should be set for the first time with setPassword
 	private $admin;
  
     /**
@@ -38,6 +38,17 @@ class User {
                 $this->$name = $value;  
             }
         }
+    }
+    
+    function verifyUser($post_var_name) {
+        $cleanPassword = hPOST($post_var_name);
+        return password_verify($password, $cleanPassword);
+    }
+    /**
+     * should be used to hash and store the plain text password into the user object
+     */
+    function setPassword($pass) {
+        $password = password_hash($pass,PASSWORD_BCRYPT);
     }
     
     function __get($name) {
