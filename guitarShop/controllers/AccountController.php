@@ -22,7 +22,7 @@
 	 public function myAccount() {
 		Page::$title = 'My Account';
 		Page::$user = $_SESSION['user']->username;
-		require((APP_NON_WEB_BASE_DIR . 'views/myAccount.php');
+		require(APP_NON_WEB_BASE_DIR . 'views/myAccount.php');
 	 }
 	 
 	 public function register() {
