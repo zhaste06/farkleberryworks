@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Product model data access and manipulation (DAM) class.
+ * User model data access and manipulation (DAM) class.
  *
  * @author Group We're Ready and jam
  */
-class ProductDAM extends DAM {
+class UserDAM extends DAM {
 
     // Database connection is inherited from the parent.
     function __construct() {
@@ -14,7 +14,7 @@ class ProductDAM extends DAM {
 
     /**
      * Read the User object from the database with the specified email
-     * @param type $email the email of the user to be retreived.
+     * @param type $email the email of the user to be retrieved.
      * @return \User the resulting User object - null if user is
      * not in the database.
      */
@@ -29,27 +29,27 @@ class ProductDAM extends DAM {
         if ($userDB == null) {
             return null;
         } else {
-            return new Product($this->mapColsToVars($userDB));
+            return new User($this->mapColsToVars($userDB));
         }
     }
 
     /**
-     * Write the specified product to the database. If the product is not
-     * in the database, the object is added. If the product is already in the
+     * Write the specified user to the database. If the user is not
+     * in the database, the object is added. If the user is already in the
      * database, the object is updated.
-     * @param type $product the Product object to be written.
+     * @param type $user the User object to be written.
      */
     public function createUser($user) {
 
-        // Check to see if the product is already in the database.
+        // Check to see if the user is already in the database.
         $query = 'SELECT email FROM users
               WHERE email = :email';
         $statement = $this->db->prepare($query);
-        $statement->bindValue(':email', $user->email)
+        $statement->bindValue(':email', $user->email);
         $statement->execute();
         $userDB = $statement->fetch();
         $statement->closeCursor();
-        if ($user == null) {
+        if ($userDB == null) {
 
             // Add a new user to the database
             $query = 'INSERT INTO products
@@ -84,11 +84,11 @@ class ProductDAM extends DAM {
     // This function can not be used to update non-existant users.
     public function updateUser($user) {
 
-        // Check to see if the product is already in the database.
+        // Check to see if the user is already in the database.
         $query = 'SELECT email FROM users
               WHERE email = :email';
         $statement = $this->db->prepare($query);
-        $statement->bindValue(':email', $user->email)
+        $statement->bindValue(':email', $user->email);
         $statement->execute();
         $userDB = $statement->fetch();
         $statement->closeCursor();
