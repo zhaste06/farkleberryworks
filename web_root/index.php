@@ -66,6 +66,9 @@ switch ($ctlr) {
     case 'cart':
         $controller = new CartController();
         break;
+	case 'account':
+		$controller = new AccountController();
+		break;
     default:
         $controller = new DefaultController();
 }
