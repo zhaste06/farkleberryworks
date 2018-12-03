@@ -9,19 +9,19 @@
 
 	 protected $model = null;
 
-	 public function __contruct() {
-		 parent::__contruct();
+	 public function __construct() {
+		 parent::__construct();
 	 }
 
 	 public function login() {
 		 Page::$title = 'Login';
-		 Page::$username = $_SESSION['user']->username;
+		 //Page::$username = $_SESSION['user']->username;
 		 require(APP_NON_WEB_BASE_DIR . 'views/login.php');
 	 }
 
 	 public function myAccount() {
 		Page::$title = 'My Account';
-		Page::$user = $_SESSION['user']->username;
+		//Page::$user = $_SESSION['user']->username;
 		require(APP_NON_WEB_BASE_DIR . 'views/myAccount.php');
 	 }
 
