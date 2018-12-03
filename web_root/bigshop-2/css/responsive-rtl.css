@@ -1,0 +1,80 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Bigshop eCommerce HTML Template
+    Author: Harnish Design
+    Author URI: http://harnishdesign.net
+
+-----------------------------------------------------------------------------------*/
+ 
+@media screen and (max-width:991px) {
+/**===== Header =====**/
+#header #logo{float:none;}
+.drop-icon{float:right;}
+#header .links {border: medium none; float: none;}
+.left-top{right:auto; left:0;}
+#header .links > ul > li{float:none;}
+
+/**===== Menu =====**/
+#menu .navbar-header > span{text-align:right;}
+#menu .nav{text-align:right;}
+#menu .nav > li{float:none;}
+#menu .nav > li.categories > div > .column > div{right:auto;}
+#menu .nav > li.categories_hor > div .submenu, .submenu{right:auto;}
+#language, #currency{border:none 0px;}
+#menu > span{padding:0 8px 0 15px;}
+#menu > span:before, #menu > span:after{left:0; right:auto;}
+#menu .nav > li > .dropdown-menu, #menu .nav > li > .dropdown-menu li .dropdown-menu {margin-right:0!important;}
+
+/**===== Footer =====**/
+#footer .social a{float:none; display:inline-block;}
+
+/**===== Other =====**/
+span.submore{right:auto; left:0;}
+span.submore:after{right:auto; left:0;}
+.product-info .image{float:none;}
+.category .tabs{right:5px; left:auto;}
+.sitemap li ul{margin-left:0px; margin-right:30px;}
+/**===== Infographic =====**/
+.infographic-box.pull-left .infographic-year{left:-60px;}
+/**===== Blog =====**/
+.side-item-blog .post-thumb .caption{margin-right:55px;}
+
+}
+@media (max-width: 767px) {
+/**===== Header =====**/
+#header #cart{text-align:center;}
+#header #cart .dropdown-menu{right:50%; margin-right:-210px;}
+.left-top #language, #currency{display:block;}
+#header #cart, #header #search, #footer .powered_text, #footer .social{float:none;}
+
+/**===== Footer =====**/
+#footer .column, #footer .contact{float:none;}
+
+/**===== Other =====**/
+.product-list .cart, .product-list .wishlist, .product-list .compare, .product-info > .left, .product-info .image-additional a{float:none;}
+.product-list .image{margin-left:0;}
+.category-list ul { float: none; width:auto; margin-left:0px;}
+.product-tab .tabs li{margin-left:15px;}
+#container .category-module h3{text-align:right;}
+
+/**===== Infographic =====**/
+.infographic-box.pull-left:before {
+    margin-right: -13px;
+    right: 50%;
+}
+/**===== Blog =====**/
+.post-comment .post-comment{margin-right:20px;}
+
+}
+
+@media screen and (max-width:480px) {	
+.product-tab .tabs li{margin-left:10px;}
+}
+
+@media screen and (max-width:320px) {
+/**===== Header =====**/
+#header #cart .dropdown-menu{width:300px; margin-right:-150px;}
+/**===== Product Page =====**/
+.product-info .cart div{float:none;}
+.product-info .cart div .wishlist{margin:0 0 0 15px;}
+}

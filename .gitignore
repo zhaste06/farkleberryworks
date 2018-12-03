@@ -1,2 +1,3 @@
 dbSecure/access/dbAcess.csv
 **/*.csv
+.project
