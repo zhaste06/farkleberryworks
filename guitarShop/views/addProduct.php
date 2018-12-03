@@ -2,7 +2,7 @@
 <main>
 <section>
     <h1>Product Manager - Add Product</h1>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="." method="post" id="add_edit_product_form">
         <input type="hidden" name="ctlr" value="admin" />
         <input type="hidden" name="action" value="addProduct" />
         <label>Category:</label>
