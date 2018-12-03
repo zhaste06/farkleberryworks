@@ -2,7 +2,7 @@
 
 /**
  * Request broker GuitarShop Application.
- * 
+ *
  * @author jam
  * @version 180428
  */
@@ -66,9 +66,9 @@ switch ($ctlr) {
     case 'cart':
         $controller = new CartController();
         break;
-	case 'account':
-		$controller = new AccountController();
-		break;
+	  case 'account':
+		    $controller = new AccountController();
+		    break;
     default:
         $controller = new DefaultController();
 }
