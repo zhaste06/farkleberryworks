@@ -51,6 +51,13 @@ class User {
         $password = password_hash($pass,PASSWORD_BCRYPT);
     }
     
+    function isAdmin() {
+        if ($admin == 1)
+            return true;
+        else
+            return false;
+    }
+    
     function __get($name) {
         return $this->$name;
     }
