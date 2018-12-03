@@ -14,11 +14,11 @@ class User {
     private $phone;
     private $address;
     private $city;
-	private $zip;
-	private $country;
-	private $state;
-	private $password; //This should be set for the first time with setPassword
-	private $admin;
+	  private $zip;
+	  private $country;
+	  private $state;
+	  private $password; //This should be set for the first time with setPassword
+    private $admin;
 
     /**
      * Builds an object with instance variables set. Only the instance variables
