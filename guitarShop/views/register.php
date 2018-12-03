@@ -21,7 +21,7 @@
           <h1 class="title">Register Account</h1>
           <p>If you already have an account with us, please login at the <a href="/?ctrl=account&action=login">Login Page</a>.</p>
           <form class="form-horizontal" action="." method="POST">
-            <input type="hidden" name='ctrl' value='account' />
+            <input type="hidden" name='ctlr' value='account' />
             <input type="hidden" name='action' value='register' />
             <fieldset id="account">
               <legend>Your Personal Details</legend>
