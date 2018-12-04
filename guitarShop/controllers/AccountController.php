@@ -29,6 +29,7 @@
        Page::$title = 'Login';
        require(APP_NON_WEB_BASE_DIR . 'views/login.php');
    }
+ }
 
 	 public function myAccountGET() {
 		Page::$title = 'My Account';
