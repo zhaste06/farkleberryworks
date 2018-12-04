@@ -38,9 +38,9 @@ class DefaultController {
             $vm = ProductsVM::getFeaturedInstance();
         }
         if (!isset($_SESSION)) {session_start();}
-        $vm = AccountVM::accountInstance();
-        if (isset($vm->User)) {
-          echo "Welcome " . $vm->User->firstname;
+        $vmAcc = AccountVM::accountInstance();
+        if (isset($vmAcc->User)) {
+          echo "Welcome " . $vmAcc->User->firstname;
         }
         // Go to the default view of the application.
         require(APP_NON_WEB_BASE_DIR . 'views/home.php');
