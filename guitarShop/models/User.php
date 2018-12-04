@@ -35,7 +35,7 @@ class User {
         // instance variable.
         if ($data !== null && $data > 0) {
             foreach ($data as $name => $value) {
-                $this->$name = $value;
+                $this->name = $value;
             }
         }
     }
@@ -59,11 +59,11 @@ class User {
     }
 
     function __get($name) {
-        return $this->$name;
+        return $this->name;
     }
 
     function __set($name, $value) {
-        $this->$name = $value;
+        $this->name = $value;
     }
 }
 ?>
