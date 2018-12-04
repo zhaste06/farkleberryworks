@@ -57,7 +57,7 @@
        Page::$title = 'Register a new account';
        require(APP_NON_WEB_BASE_DIR . 'views/register.php');
      }
-
+   }
      public function logout() {
        if (!isset($_SESSION)) {session_start();}
        session_unset();
@@ -66,6 +66,5 @@
        require(APP_NON_WEB_BASE_DIR . 'views/home.php');
      }
 
-	 }
- }
+   }
 ?>
