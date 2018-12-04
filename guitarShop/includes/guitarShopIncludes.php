@@ -27,6 +27,5 @@ include_once(APP_NON_WEB_BASE_DIR .'db/ProductDAM.php');
 include_once(APP_NON_WEB_BASE_DIR .'viewModels/Page.php');
 include_once(APP_NON_WEB_BASE_DIR .'viewModels/MessageVM.php');
 include_once(APP_NON_WEB_BASE_DIR .'viewModels/ProductsVM.php');
+include_once(APP_NON_WEB_BASE_DIR .'viewModels/AccountVM.php');
 //include_once(APP_NON_WEB_BASE_DIR .'viewModels/ProductsVMAchtung.php');
-
-
