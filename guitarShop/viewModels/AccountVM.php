@@ -16,8 +16,7 @@ class AccountVM {
     $this->hashedPassword = '';
     $this->email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
     $this->UserDAM = new $UserDAM();
-    $this->User = isset($this->UserDAM($this->email)) ?
-      isset($this->UserDAM($this->email) : '';
+    $this->User = isset($this->UserDAM($this->email)) ? isset($this->UserDAM($this->email) : '';
 
 
     if (isset($email)) {
