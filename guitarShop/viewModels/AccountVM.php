@@ -40,7 +40,7 @@ class AccountVM {
       'address' => hPOST('address'),
       'city' => hPOST('city'),
       'state' => hPOST('state'),
-      'zip' => intPOST('zip'),
+      'zip' => hPOST('zip'),
       'country' => hPOST('country'),
       'state' => hPOST('state'),
       'password' => hPOST('password'),
