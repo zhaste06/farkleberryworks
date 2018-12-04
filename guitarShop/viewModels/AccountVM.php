@@ -16,17 +16,18 @@ class AccountVM {
     $this->hashedPassword = '';
     $this->email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
     $this->UserDAM = new $UserDAM();
-    $this->User = isset($this->UserDAM($this->email)) ? isset($this->UserDAM($this->email)) : '';
+    $this->User = isset($this->UserDAM($this->email)) ?
+      isset($this->UserDAM($this->email)) : '';
 
 
     if (isset($email)) {
-      $this->$user = $this->UserDAM->getUser($email);
+      $this->user = $this->UserDAM->getUser($email);
     }
   }
 
   public static newUserInstance() {
     $vm = new self();
-    $vm->$email = hPOST('email');
+    $vm->email = hPOST('email');
     //if block for validation functions for email, phone, zip, and password
     //if (hPOST('phone'))...
     //
@@ -82,5 +83,4 @@ class AccountVM {
       }
   }
 
-
-  }
+}
