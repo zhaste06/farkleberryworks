@@ -7,7 +7,7 @@
  * @version 180428
  */
 // Non-web tree base directory for this application.
-define('NON_WEB_BASE_DIR', 'C:/apache/sidefiles/');
+define('NON_WEB_BASE_DIR', 'C:/cis4270/');
 define('APP_NON_WEB_BASE_DIR', NON_WEB_BASE_DIR . 'guitarShop/');
 include_once(APP_NON_WEB_BASE_DIR . 'includes/guitarShopIncludes.php');
 
