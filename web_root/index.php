@@ -68,6 +68,29 @@ switch ($ctlr) {
         break;
 	  case 'account':
 		    $controller = new AccountController();
+        if ($action === 'login') {
+          if ($post) {
+            $action = 'loginPOST';
+          } else {
+            $action = 'loginGET';
+          }
+        }
+        if ($action === 'register') {
+          if ($post) {
+            $action = 'registerPOST';
+          } else {
+            $action = 'registerGET';
+          }
+        }
+        if ($action === 'myAccount') {
+          if ($post) {
+            $action = 'myAccountPOST';
+          } else {
+            $action = 'myAccountGET';
+          }
+        }
+
+
 		    break;
     default:
         $controller = new DefaultController();
