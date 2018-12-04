@@ -40,7 +40,6 @@ class UserDAM extends DAM {
      * @param type $user the User object to be written.
      */
     public function createUser($user) {
-
         // Check to see if the user is already in the database.
         $query = 'SELECT email FROM users
               WHERE email = :email';
@@ -53,12 +52,12 @@ class UserDAM extends DAM {
 
             // Add a new user to the database
             $query = 'INSERT INTO products
-                (firstname, lastname, email, 
-                phone, address, city, zip, country, 
+                (firstname, lastname, email,
+                phone, address, city, zip, country,
                 state, password, admin)
               VALUES
-                (:firstname, :lastname, :email, 
-                :phone, :address, :city, :zip, 
+                (:firstname, :lastname, :email,
+                :phone, :address, :city, :zip,
                 :country, :state, :password, :admin )';
             $statement = $this->db->prepare($query);
             $statement->bindValue(':firstname',$user->firstname);
@@ -66,20 +65,21 @@ class UserDAM extends DAM {
             $statement->bindValue(':email',$user->email);
             $statement->bindValue(':phone',$user->phone);
             $statement->bindValue(':address',$user->address);
-            $statement->bindValue(':city',$user->city);                      
-            $statement->bindValue(':zip',$user->zip);                      
-            $statement->bindValue(':country',$user->country);                     
+            $statement->bindValue(':city',$user->city);
+            $statement->bindValue(':zip',$user->zip);
+            $statement->bindValue(':country',$user->country);
             $statement->bindValue(':state',$user->state);
             $statement->bindValue(':password',$user->password);
             $statement->bindValue(':admin',$user->admin);
             $statement->execute();
             $statement->closeCursor();
+            return 0; //no error
         } else {
-            //nothing
+            return 1;//error
         }
     }
 
-    // This function should only be used by logged in users on their own user email. 
+    // This function should only be used by logged in users on their own user email.
     // This should not be used to create a new user.
     // This function can not be used to update non-existant users.
     public function updateUser($user) {
@@ -98,9 +98,9 @@ class UserDAM extends DAM {
 
             // Update an existing user.
             $query = 'UPDATE users
-              SET firstname = :firstname, lastname = :lastname, 
-                email = :email, phone = :phone, address = :address, 
-                city = :city, zip = :zip, country = :country, 
+              SET firstname = :firstname, lastname = :lastname,
+                email = :email, phone = :phone, address = :address,
+                city = :city, zip = :zip, country = :country,
                 state = :state, password = :password, admin = :admin
               WHERE id = :id';
 
@@ -111,9 +111,9 @@ class UserDAM extends DAM {
             $statement->bindValue(':email',$user->email);
             $statement->bindValue(':phone',$user->phone);
             $statement->bindValue(':address',$user->address);
-            $statement->bindValue(':city',$user->city);                      
-            $statement->bindValue(':zip',$user->zip);                      
-            $statement->bindValue(':country',$user->country);                     
+            $statement->bindValue(':city',$user->city);
+            $statement->bindValue(':zip',$user->zip);
+            $statement->bindValue(':country',$user->country);
             $statement->bindValue(':state',$user->state);
             $statement->bindValue(':password',$user->password);
             $statement->bindValue(':admin',$user->admin);

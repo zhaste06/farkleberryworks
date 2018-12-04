@@ -12,7 +12,7 @@
 class DefaultController {
 
     public function __construct() {
-        
+
     }
 
     public final function run($action = 'index', $vm = null) {
@@ -32,12 +32,16 @@ class DefaultController {
 
         // Set page tab title
         Page::$title = 'My Guitar Shop';
-        
+
         // Create view model
         if ($vm === null) {
             $vm = ProductsVM::getFeaturedInstance();
         }
-
+        if (!isset($_SESSION)) {session_start();}
+        $vmAcc = AccountVM::accountInstance();
+        if (isset($vmAcc->User)) {
+          echo "Welcome " . $vmAcc->User->firstname;
+        }
         // Go to the default view of the application.
         require(APP_NON_WEB_BASE_DIR . 'views/home.php');
     }
