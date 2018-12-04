@@ -3,41 +3,34 @@
 /**
  * @author Group We're Ready and jam
  */
-<<<<<<< HEAD
-class Account {
-
-  public $user;
-  public $email;
-  protected $UserDAM;
-
-
-  public function __construct() {
-    $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
-    $this->$UserDAM = new $UserDAM();
-
-    if (isset($UserDAM)) {
-      $user = $UserDAM->getUser($_SESSION['email']);
-    }
-  }
-
-
-
-?>
-=======
 class AccountVM {
 
   public $User;
   public $errorMsg;
   public $email;
+  public $hashedPassword;
   protected $UserDAM;
 
   public function __construct() {
-    $this->$user = 'null'
     $this->errorMsg = '';
+    $this->hashedPassword = '';
+    $this->email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
+    $this->UserDAM = new $UserDAM();
+    $this->User = isset($this->UserDAM($this->email)) ?
+      isset($this->UserDAM($this->email) : '';
+
+
+    if (isset($email)) {
+      $this->$user = $this->UserDAM->getUser($email);
+    }
   }
 
-  public static newUser() {
-    $vm = new self()
+  public static newUserInstance() {
+    $vm = new self();
+    $vm->$email = hPOST('email');
+    //if block for validation functions for email, phone, zip, and password
+    //if (hPOST('phone'))...
+    //
     $varArray = array(
       'firstname' => hPOST('firstname'),
       'lastname' => hPOST('lastname'),
@@ -51,43 +44,44 @@ class AccountVM {
       'state' => hPOST('state'),
       'password' => hPOST('password'),
       'admin' => '0' );
-
-
-
-
-
+    $vm->User = new User($varArray);
+    $vm->User->setPassword($varArray['password']);
+    $vm->errorMsg = $vm->UserDAM->createUser($vm->User);
+    if ($vm->errorMsg === 0) {
+      return $vm;
+    } else {
+      $errorMsg = 'User Creation Failed';
+      return $vm;
+    }
   }
 
-  private $id;
-  private $firstname;
-  private $lastname;
-  private $email;
-  private $phone;
-  private $address;
-  private $city;
-  private $zip;
-  private $country;
-  private $state;
-  private $password; //This should be set for the first time with setPassword
-  private $admin;
+  //gets password through post paramter
+  public static loginInstance() {
+    if ( !isset($_SESSION) ) { session_start(); }
+    $vm = new self();
+    $vm->email = hPOST('email');
+    $vm->User = $vm->UserDAM->getUser($email);
+    if ($vm->User->verifyUser('password')) {
+      $_SESSION['email'] = $vm->email;
+      $_SESSION['logged_in']==1;
+      $_SESSION['time'] = time();
+      return $vm;
+    } else {
+      $vm->errorMsg = "Email and password mismatch";
+      return $vm;
+    }
+  }
 
-  /**
-   * Builds an object with instance variables set. Only the instance variables
-   * will be set that correspond to the input data (i.e., not all instance
-   * variables will be set in all cases.
-   * @param array $data Optional values to be loaded in instance variables.
-   */
-  function __construct($data = array()) {
-      if (!is_array($data)) {
-          trigger_error('Non-array input to ' . get_class() . 'constructor');
-      } else
-
-      // If the input array has at least one value, set the corresponding
-      // instance variable.
-      if ($data !== null && $data > 0) {
-          foreach ($data as $name => $value) {
-              $this->$name = $value;
-          }
+  //works only if user is logged in.
+  public static accountInstance() {
+      if ( !isset($_SESSION) ) { session_start(); }
+      $vm = new self();
+      if ($vm->email !== '') {
+        return $vm->UserDAM->getUser($vm->email);
+      } else {
+        return null;
       }
   }
->>>>>>> a0c529ea13e2c66782101ee90dea2b8ad75c6957
+
+
+  }
