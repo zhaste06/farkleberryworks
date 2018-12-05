@@ -39,6 +39,7 @@
               <ul>
                 <li><a href="./?ctlr=account&action=login">Login</a></li>
                 <li><a href="./?ctlr=account&action=register">Register</a></li>
+                <li><a href="./?ctlr=account&action=myAccount">My Account</a></li>
               </ul>
             </div>
           </nav><!-- Top Bar End -->
@@ -75,6 +76,7 @@
           <ul class="nav navbar-nav">
             <li><a class="home_link" title="Home" href="/"> <i class="fa fa-home"></i> </a></li>
             <li><a href="/">Featured Products</a></li>
+            <li><a href="./?ctlr=account&action=myAccount">My Account</a></li>
           </ul>
         </div>
     </div>
